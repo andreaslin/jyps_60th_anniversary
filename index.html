@@ -1,0 +1,165 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>無標題文件</title>
+<style type="text/css">
+<!--
+body {
+	font: 100%/1.4 Verdana, Arial, Helvetica, sans-serif;
+	background-color: #4E5869;
+	margin: 0;
+	padding: 0;
+	color: #000;
+}
+
+/* ~~ 元素/標籤選取器 ~~ */
+ul, ol, dl { /* 由於瀏覽器之間的差異，最佳作法是在清單中使用零寬度的欄位間隔及邊界。為了保持一致，您可以在這裡指定所要的量，或在清單包含的清單項目 (LI、DT、DD) 上指定所要的量。請記住，除非您寫入較為特定的選取器，否則在此執行的作業將重疊顯示到 .nav 清單。 */
+	padding: 0;
+	margin: 0;
+}
+h1, h2, h3, h4, h5, h6, p {
+	margin-top: 0;	 /* 移除上方邊界可以解決邊界可能從其包含的 Div 逸出的問題。剩餘的下方邊界可以保持 Div 不與接在後面的元素接觸。 */
+	padding-right: 15px;
+	padding-left: 15px; /* 將欄位間隔加入至 Div 內元素的兩側 (而不是 Div 本身)，即可不需執行任何方塊模型的計算作業。具有側邊欄位間隔的巢狀 Div 也可當做替代方法。 */
+}
+a img { /* 這個選取器會移除某些瀏覽器在影像由連結所圍繞時，影像周圍所顯示的預設藍色邊框 */
+	border: none;
+}
+
+/* ~~ 網站連結的樣式設定必須保持此順序，包括建立滑過 (Hover) 效果的選取器群組在內。~~ */
+a:link {
+	color:#414958;
+	text-decoration: underline; /* 除非您要設定非常獨特的連結樣式，否則最好提供底線，以便快速看出 */
+}
+a:visited {
+	color: #4E5869;
+	text-decoration: underline;
+}
+a:hover, a:active, a:focus { /* 這個選取器群組可以讓使用鍵盤導覽的使用者，也和使用滑鼠的使用者一樣擁有相同的滑過體驗。 */
+	text-decoration: none;
+}
+
+/* ~~ 這個容器環繞著所有其他的 Div，並依百分比設定其寬度 ~~ */
+.container {
+	width: 80%;
+	max-width: 1260px;/* 建議您使用最大寬度，如此版面在大型螢幕上就不致於過寬，讓行保持比較方便閱讀的長度。IE6 並不適用這項宣告。 */
+	min-width: 780px;/* 建議您使用最小寬度，如此版面在大型螢幕上就不致於過窄，讓行在側欄中保持比較方便閱讀的長度。IE6 並不適用這項宣告。 */
+	background-color: #FFF;
+	margin: 0 auto; /* 兩側的自動值與寬度結合後，版面便會置中對齊。如果將 .container 的寬度設為 100%，就不需要這麼做。 */
+	overflow: hidden; /* 這個宣告可以讓 .container 清除其中的所有浮動欄。 */
+}
+
+/* ~~ 這是版面的欄位。~~ 
+
+1) 欄位間隔只會置於 Div 的頂端或底部。這些 Div 內的元素在兩側會有欄位間隔，可讓您不需進行「方塊模型計算」。請記住，如果對 Div 本身加入任何側邊的欄位間隔或邊框，在計算「總」寬度時，就會將這些加入您定義的寬度。您也可以選擇移除 Div 中元素的欄位間隔，然後在其中放置沒有寬度的第二個 Div，並依設計所需放置欄位間隔。
+
+2) 尚未為這些欄位提供邊界，因為它們全都是浮動的。如果必須加入邊界，請避免將其放在浮動方向的一側 (例如將右邊界放在設定為向右浮動的 Div 上)。在許多時候，您都可以改用欄位間隔。對於必須違反此規則的 Div，您應該在 Div 的規則中加入 "display:inline" 宣告，以防止某些版本的 Internet Explorer 將邊界加倍。
+
+3) 因為可在文件中多次使用類別 (也可對單一的元素套用多個類別)，所以已為欄位指定類別名稱，而非 ID。例如，您可在必要時將兩個側邊列 Div 堆疊起來。如有需要，也可以將這些名稱輕鬆地變更為 ID (只要您在每份文件中只使用一次)。
+
+4) 如果想要將導覽放在右方而非左方，只要將這些欄設定為往反方向浮動 (全部往右，而非全部往左)，它們就會以相反順序呈現。您不需要在 HTML 原始碼中移動 Div。
+
+*/
+.sidebar1 {
+	float: left;
+	width: 20%;
+	background-color: #93A5C4;
+	padding-bottom: 10px;
+}
+.content {
+	padding: 10px 0;
+	width: 60%;
+	float: left;
+}
+.sidebar2 {
+	float: left;
+	width: 20%;
+	background-color: #93A5C4;
+	padding: 10px 0;
+}
+
+/* ~~ 這個群組選取器會在 .content 區域空間中提供清單 ~~ */
+.content ul, .content ol { 
+	padding: 0 15px 15px 40px; /* 這個欄位間隔反映出上方標題和段落規則中的右方間隔。當欄位間隔位於下方時，便可將清單中的其他元素間隔開來；當位於左方時，則可藉此建立縮排。這些動作均可依需要進行調整。 */
+}
+
+/* ~~ 導覽清單樣式 (如果選擇使用 Spry 之類的預製飛出選單，則可移除) ~~ */
+ul.nav {
+	list-style: none; /* 這會移除清單標記 */
+	border-top: 1px solid #666; /* 這會建立連結的上方邊框，其他則都會使用下方邊框放置在 LI 上 */
+	margin-bottom: 15px; /* 這會在下方的內容上建立導覽間的間距 */
+}
+ul.nav li {
+	border-bottom: 1px solid #666; /* 這會建立按鈕分隔 */
+}
+ul.nav a, ul.nav a:visited { /* 將這些選取器放入群組，即可確保您的連結即使在受到點擊後仍保有按鈕外觀 */
+	padding: 5px 5px 5px 15px;
+	display: block; /* 這會為連結提供區塊屬性，使連結能填滿包含它的整個 LI，讓整個區域都能回應滑鼠點按動作。 */
+	text-decoration: none;
+	background-color: #8090AB;
+	color: #000;
+}
+ul.nav a:hover, ul.nav a:active, ul.nav a:focus { /* 這會同時變更滑鼠及鍵盤導覽器的背景及文字顏色 */
+	background-color: #6F7D94;
+	color: #FFF;
+}
+
+/* ~~ 其他 float/clear 類別 ~~ */
+.fltrt {  /* 這個類別可用來讓元素在頁面中浮動，浮動的元素必須位於頁面上相鄰的元素之前。 */
+	float: right;
+	margin-left: 8px;
+}
+.fltlft { /* 這個類別可用來讓元素在頁面左方浮動，浮動的元素必須位於頁面上相鄰的元素之前。 */
+	float: left;
+	margin-right: 8px;
+}
+.clearfloat { /* 這個類別可放置在 <br /> 或空白的 Div 上，當做接在 #container 內最後一個浮動 Div 後方的最後一個元素 (如果已移除 .container 上的 overflow:hidden) */
+	clear:both;
+	height:0;
+	font-size: 1px;
+	line-height: 0px;
+}
+-->
+</style><!--[if lte IE 7]>
+<style>
+.content { margin-right: -1px; } /* 這個 1 像素的負邊界可放在此版面中的任何欄上，而具有相同的修正效果。 */
+ul.nav a { zoom: 1; }  /* zoom 屬性可為 IE 提供修正連結之間多餘空白時所需的 hasLayout 觸發。 */
+</style>
+<![endif]--></head>
+
+<body>
+
+<div class="container">
+  <div class="sidebar1">
+    <ul class="nav">
+      <li><a href="#">連結一</a></li>
+      <li><a href="#">連結二</a></li>
+      <li><a href="#">連結三</a></li>
+      <li><a href="#">連結四</a></li>
+    </ul>
+    <p> 以上的連結示範基本的導覽結構，此結構使用以 CSS 設定樣式的項目清單。請以此做為起點，然後修改屬性來產生您獨有的外觀。如果需要飛出選單，請使用 a Spry menu、menu widget from Adobe's Exchange 或多種其他的 Javascript 或 CSS 解決方案自行建立。</p>
+    <p>如果想要將導覽列於頂端，只需將 ul.nav 移到頁面頂端，然後重新建立樣式設定即可。</p>
+    <!-- end .sidebar1 --></div>
+  <div class="content">
+    <h1>說明</h1>
+    <p>請注意，這些版面的 CSS 都有詳細的註解。如果您是在「設計」檢視中進行大部分的作業，可以看一下程式碼來取得有關使用流動版面 CSS 的提示。您可以在啟動您的網站之前，將這些註解移除。有關這些 CSS 版面所使用的技巧之詳細資訊，請至 Adobe 開發人員中心閱讀本文 - <a href=http://www.adobe.com/go/adc_css_layouts">http://www.adobe.com/go/adc_css_layouts</a>。</p>
+    <h2>清除</h2>
+    <p>因為所有的欄都是浮動的，所以這個版面會在 .container 上使用 overflow:hidden。這項清除技巧可強制 .container 辨識欄結束的位置，以顯示放置在 .container 上的任何邊框或背景顏色。如果有伸出 .container 外的大型元素，就會顯示為截斷。您同時也無法使用負的邊界或具有負值的絕對定位，將元素拉到 .container 外，如果這麼做，元素將無法在 .container 外顯示。</p>
+    <p>如果您需要使用這些屬性，就必須使用不同的清除方法。最可靠的方法是在最後的浮動欄之後 (但在 .container 結束之前) 加入 &lt;br class="clearfloat" /&gt; or &lt;div class="clearfloat"&gt;&lt;/div&gt;，這樣就會產生相同的清除效果。</p>
+    <h3>頁尾</h3>
+    <p>在欄後加入頁尾 (但仍在 .container 內) 會導致此項 overflow:hidden 清除方法失敗。您可以將 .footer 在第一個 .container 外放入第二個 .container 中，而不會造成不良影響。最簡單的選擇可能是以包含頁首和頁尾的版面為起點，然後再將頁首移除，以利用該版面類型中的清除方法。</p>
+    <h4>Internet Explorer 條件式註解</h4>
+    <p>這些流動版面包含 Internet Explorer 條件式註解 (IECC)，可用來修正兩個問題。 </p>
+    <ol>
+      <li>瀏覽器在依百分比而定的版面中捨入 Div 大小的方法不一致。如果瀏覽器必須呈現 144.5 像素或 564.5 像素等數字，就必須將其捨入成最接近的整數。Safari 和 Opera 會捨去小數位，Internet Explorer 會進位，Firefox 則會向上進一欄然後向下捨去一欄，以將容器完全填滿。這些捨入問題可能會導致某些版面的不一致。在此 IECC 中，有 1 像素的負邊界可用來修正 IE。您可以將其移到任何欄 (左右方皆可)，依您的版面需求而定。</li>
+      <li>zoom 屬性會加入至導覽清單內的錨點，因為在某些情況下，IE6 或 IE7 中會呈現多餘的空白。縮放能為 IE 提供修正此問題的專屬 hasLayout 屬性。</li>
+    </ol>
+    <!-- end .content --></div>
+  <div class="sidebar2">
+    <h4>背景</h4>
+    <p>就本質而言，任何 Div 上的背景顏色都只會顯示內容的長度。如果您想要使用分隔線而非顏色，請將邊框放置在 .content Div 的側邊 (但只有在其一定會包含更多內容時，才能這麼做)。</p>
+    <!-- end .sidebar2 --></div>
+  <!-- end .container --></div>
+</body>
+</html>
