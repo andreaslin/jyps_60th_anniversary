@@ -12,6 +12,7 @@ Licence URI: http://www.os-templates.com/template-terms
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link rel="stylesheet" href="../layout/styles/layout.css" type="text/css" />
 <script type="text/javascript" src="../layout/scripts/jquery.min.js"></script>
+
 <!-- prettyPhoto -->
 <link rel="stylesheet" href="../layout/scripts/prettyphoto/prettyPhoto.css" type="text/css" />
 <script type="text/javascript" src="../layout/scripts/prettyphoto/jquery.prettyPhoto.js"></script>
@@ -71,23 +72,26 @@ $(document).ready(function() {
 </div>
 <!-- ####################################################################################################### -->
 <div class="wrapper row4">
-  <div id="container" class="clear"> 
-    <!-- ####################################################################################################### -->
-    <div id="gallery" class="clear">
-      <div class="gallerycontainer clear">
-      	<table>
-			<tr>
-            	<td> 
-                	<a href="../images/校徽.jpg" rel="lightbox-cats" title="Beautiful, isn't it?">
-                		<img src="../images/校徽.jpg" widht="50" height="50"></img> </a></td>
-                <td> 
-                	<a href="../images/校徽.jpg" rel="lightbox-cats" title="Beautiful, isn't it?">
-                		<img src="../images/校徽.jpg" widht="50" height="50"></img> </a></td>
-	        </tr>                        
-        </table>    
-      </div>
-      <!-- ########### --> 
-    </div>
+  <div id="container" class="clear">
+	<script type="text/javascript">
+		var dir = "../images/magazine/";
+		var fileextension = ".jpg";
+		$.ajax({
+    		//This will retrieve the contents of the folder if the folder is configured as 'browsable'
+    		url: dir,
+    		success: function (data) {
+        	//List all jpg file names in the page
+			window.alert("here");
+        	$(data).find("a:contains(" + fileextension + ")").each(function () {
+            	var filename = this.href.replace(window.location.host, "").replace("http:///", "");
+            	$("#gallery").append($("<img src=" + dir + filename + "></img>"));
+        		});
+    		}
+		});
+	</script>
+    <table id="gallery">
+    	
+    </table>
     <!-- ####################################################################################################### -->
     <div class="pagination">
       <ul>
