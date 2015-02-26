@@ -73,40 +73,40 @@ $(document).ready(function() {
 <!-- ####################################################################################################### -->
 <div class="wrapper row4">
   <div id="container" class="clear">
-	<script type="text/javascript">
-		var dir = "../images/magazine/";
-		var fileextension = ".jpg";
-		$.ajax({
-    		//This will retrieve the contents of the folder if the folder is configured as 'browsable'
-    		url: dir,
-    		success: function (data) {
-        	//List all jpg file names in the page
-			window.alert("here");
-        	$(data).find("a:contains(" + fileextension + ")").each(function () {
-            	var filename = this.href.replace(window.location.host, "").replace("http:///", "");
-            	$("#gallery").append($("<img src=" + dir + filename + "></img>"));
-        		});
-    		}
-		});
-	</script>
     <table id="gallery">
-    	
+<tr>
+<td> <a href="../images/magazine/01.jpg" rel="lightbox-cat"><img src="../images/magazine/01.jpg" width="207" height="293" /></a></td>
+<td> <a href="../images/magazine/02.jpg" rel="lightbox-cat"><img src="../images/magazine/02.jpg" width="207" height="293" /></a></td>
+<td> <a href="../images/magazine/03.jpg" rel="lightbox-cat"><img src="../images/magazine/03.jpg" width="207" height="293" /></a></td>
+<td> <a href="../images/magazine/04.jpg" rel="lightbox-cat"><img src="../images/magazine/04.jpg" width="207" height="293" /></a></td>
+</tr>
+<tr>
+<td> <a href="../images/magazine/05.jpg" rel="lightbox-cat"><img src="../images/magazine/05.jpg" width="207" height="293" /></a></td>
+<td> <a href="../images/magazine/06.jpg" rel="lightbox-cat"><img src="../images/magazine/06.jpg" width="207" height="293" /></a></td>
+<td> <a href="../images/magazine/07.jpg" rel="lightbox-cat"><img src="../images/magazine/07.jpg" width="207" height="293" /></a></td>
+<td> <a href="../images/magazine/08.jpg" rel="lightbox-cat"><img src="../images/magazine/08.jpg" width="207" height="293" /></a></td>
+</tr>
+<tr>
+<td> <a href="../images/magazine/09.jpg" rel="lightbox-cat"><img src="../images/magazine/09.jpg" width="207" height="293" /></a></td>
+<td> <a href="../images/magazine/10.jpg" rel="lightbox-cat"><img src="../images/magazine/10.jpg" width="207" height="293" /></a></td>
+<td> <a href="../images/magazine/11.jpg" rel="lightbox-cat"><img src="../images/magazine/11.jpg" width="207" height="293" /></a></td>
+<td> <a href="../images/magazine/12.jpg" rel="lightbox-cat"><img src="../images/magazine/12.jpg" width="207" height="293" /></a></td>
+</tr>
     </table>
+    </div>
     <!-- ####################################################################################################### -->
     <div class="pagination">
       <ul>
-        <li class="prev"><a href="#">&laquo; Previous</a></li>
+        <li class="current">1</li>
         <li><a href="#">1</a></li>
         <li><a href="#">2</a></li>
-        <li class="splitter">&hellip;</li>
+        <li><a href="#">3</a></li>
+        <li><a href="#">4</a></li>
+        <li><a href="#">5</a></li>
         <li><a href="#">6</a></li>
-        <li class="current">7</li>
+        <li><a href="#">7</a></li>
         <li><a href="#">8</a></li>
         <li><a href="#">9</a></li>
-        <li class="splitter">&hellip;</li>
-        <li><a href="#">14</a></li>
-        <li><a href="#">15</a></li>
-        <li class="next"><a href="#">Next &raquo;</a></li>
       </ul>
     </div>
     <!-- ####################################################################################################### -->

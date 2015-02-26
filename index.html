@@ -15,6 +15,11 @@ Licence URI: http://www.os-templates.com/template-terms
 <!-- liteAccordion is Homepage Only -->
 <link rel="stylesheet" href="layout/scripts/liteaccordion-v2.2/css/liteaccordion.css" type="text/css" />
 </head>
+
+<?php
+	phpinfo();
+?>
+
 <body id="top">
 <div class="wrapper row1">
   <div id="header" class="clear">
@@ -26,24 +31,7 @@ Licence URI: http://www.os-templates.com/template-terms
 </div>
 <!-- ####################################################################################################### -->
 <div class="wrapper row2">
-  <div id="topnav">
-    <ul>
-      <li class="active"><a href="index.html">首頁</a></li>
-      <li><a href="pages/style-demo.html">活動照片</a></li>
-      <li><a href="pages/style-demo.html">校刊</a></li>
-      <li><a href="pages/full-width.html">關於竹園</a></li>
-      <li><a href="#">DropDown</a>
-        <ul>
-          <li><a href="#">Link 1</a></li>
-          <li><a href="#">Link 2</a></li>
-          <li><a href="#">Link 3</a></li>
-        </ul>
-      </li>
-      <li><a href="pages/3-columns.html">3 Columns</a></li>
-      <li class="last"><a href="pages/gallery.html">Gallery</a></li>
-    </ul>
-    <div  class="clear"></div>
-  </div>
+	<div id="navigation"></div>
 </div>
 <!-- ####################################################################################################### -->
 <div class="wrapper row3">
@@ -78,23 +66,7 @@ Licence URI: http://www.os-templates.com/template-terms
 <div class="wrapper row4"></div>
 <!-- ####################################################################################################### -->
 <div class="wrapper row5">
-<div id="footer" class="clear"> 
-    <!-- ####################################################################################################### -->
-  <div class="foot_contact">
-      <h2>嘉義縣竹園國小</h2>
-      <address>
-      611嘉義縣鹿草鄉松竹村69號
-      </address>
-      <ul>
-        <li><strong>Tel:</strong> 05-365-0524 </li>
-        <li><strong>Fax:</strong> 05-365-0446</li>
-        <li class="last"><strong>Email:</strong> <a href="#">jyps@mail.cyc.edu.tw</a></li>
-      </ul>
-  </div>
-  
-  <div class="footbox">
-  	
-  </div>
+	<div id="footer"></div>
 </div>
 <!-- ####################################################################################################### -->
 <div class="wrapper">
@@ -121,5 +93,12 @@ $("#featured_slide").liteAccordion({
     cycleSpeed: 6000, // time between slide cycles
 });
 </script>
+
 </body>
 </html>
+
+
+<?php
+	$CONTENT = ob_get_clean();
+	include = "template.html"
+?>
